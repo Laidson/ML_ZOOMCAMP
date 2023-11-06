@@ -1,0 +1,78 @@
+
+# Description
+The goal in this challenge is to predict the flight delays.
+
+You should predict DELAY column. Here there are explanations for some data rows:
+
+
+Data Features
+1. Airline(Different types of commercial airlines)
+
+2. Flight(Types of Aircraft)
+
+3. Airport From
+
+4. Airport To
+
+5. DayOfWeek(Tells you about the day of week)
+
+6. Time(Time taken.) departure time measured in minutes from midnight (in fact the range is 10-1439);
+
+7. Length(Length of flight.) duration of the flight in minutes (I did some tests if it coincided with Skyscanner)
+
+8. Delay(Time Delay)
+
+Global Data Airports
+https://www.partow.net/miscellaneous/airportdatabase/index.html
+Field	Name	Type
+01	ICAO Code	String (3-4 chars, A - Z)
+02	IATA Code	String (3 chars, A - Z)
+03	Airport Name	String
+04	City/Town	String
+05	Country	String
+06	Latitude Degrees	Integer [0,360]
+07	Latitude Minutes	Integer [0,60]
+08	Latitude Seconds	Integer [0,60]
+09	Latitude Direction	Char (N or S)
+10	Longitude Degrees	Integer [0,360]
+11	Longitude Minutes	Integer [0,60]
+12	Longitude Seconds	Integer [0,60]
+13	Longitude Direction	Char (E or W)
+14	Altitude	Integer [-99999,+99999] (Altitude in meters from mean sea level)
+16	Latitude Decimal Degrees	Floating point [-90,90]
+17	Longitude Decimal Degrees	Floating point [-180,180]
+
+
+# EDA
+
+* No presence o Null values
+* DELAY - there is no such a difference among 0 and 1 values_count
+    smaller time values have small delay.
+    Time increase dalay increases
+    Lenth and time similar distribution among 0 and 1 delay
+
+    Airline - there one air line that represent highr number of delays (WN)
+
+    DayOfWeek - aparently is not so influent over the delay
+
+    Airport - the top 3 delay airport FROM and TO are:
+        ['ATL', 'ORD', 'DEN']     
+
+
+# Project Run
+## create and starts a virtual env
+### 1. install the project dependeces using:
+`pip install -r requirements.txt`
+
+### 2. EDA analisys
+you can follow the EDA analisys runid the Jupyter NoteBook 01_EDA.ipynb
+
+### 3. Project runing
+Project was organizer in 3 files at *src/* folder:
+
+* `python src/stage_01_data_ingestion.py`
+* `python src/stage_02_train_model.py`
+* `python src/stage_03_tuning_model.py`
+
+To get the model results you should run the files on the order, all the models and performances analisys are locaded on *artifacts/* folder.
+

@@ -1,0 +1,17 @@
+{
+    "Accuracy": 0.57,
+    "Precision": 0.36,
+    "Recall": 0.53,
+    "F1-Score": 0.43,
+    "ROC-AUC Score": 0.56,
+    "Confusion Matrix": [
+        [
+            38444,
+            27655
+        ],
+        [
+            13893,
+            15791
+        ]
+    ]
+}
